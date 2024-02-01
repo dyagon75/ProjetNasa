@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>NASA Explorer</title>
+  <link rel="stylesheet" href="StyleNasa.css">
+  
+</head>
+
+<body>
+  <header>
+    <h1>NASA Explorer</h1>
+    <nav>
+      <ul>
+        <li><a href="#image-of-the-day">Image of the Day</a></li>
+        <li><a href="#mars-rovers">Mars Rovers Photos</a></li>
+        <li><a href="#epic-earth">Satellite</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="image-of-the-day">
+      <h2>Image of the Day</h2>
+      <div id="social-share-buttons">
+        <a id="facebook-share-button" href="#" target="_blank" rel="noopener noreferrer">
+          <img src="Images/facebook-icon.png" alt="Facebook">
+        </a>
+        <a id="twitter-share-button" href="#" target="_blank" rel="noopener noreferrer">
+          <img src="Images/twitter-icon.png" alt="Twitter">
+        </a>
+        <a id="instagram-share-button" href="#" target="_blank" rel="noopener noreferrer">
+          <img src="Images/instagram-icon.png" alt="Instagram">
+        </a>
+      </div>
+      <form id="date-form" method="POST">
+        <label for="image-date">Choose a date:</label>
+        <input type="date" id="image-date" name="image-date">
+        <button type="submit">Show image</button>
+      </form>
+      <div class="image-container">
+        <img src="#" alt="NASA Image of the Day" id="nasa-image">
+        <h3 id="title"></h3>
+        <p id="date"></p>
+        <p id="explanation"></p>
+      </div>
+    </section>
+
+
+
+    <section id="mars-rovers">
+      <h2>Mars Rovers Photos</h2>
+      <form id="rover-form" method="POST">
+        <label for="rover-select">Choose a rover:</label>
+        <select id="rover-select" name="rover-select">
+          <option value="curiosity">Curiosity</option>
+          <option value="opportunity">Opportunity</option>
+          <option value="spirit">Spirit</option>
+        </select>
+        <label for="rover-date">Choose a date:</label>
+        <input type="date" id="rover-date" name="rover-date">
+        <button type="submit">Show photos</button>
+      </form>
+      <div id="rover-photos"></div>
+    </section>
+
+    <section id="epic-earth">
+      <h2>Informations TLE Satellite</h2>
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+      <form method="post" action="scriptSat.php">
+        <label for="nom">Nom :</label>
+        <input type="text" name="nom" id="nom" placeholder="Entrez un nom" required>
+        <input type="submit" value="Récupérer">
+    </form>
+    </section>
+  </main>
+
+  <script src="ScriptNasa.js"></script>
+  <script src="ShareButtons.js"></script>
+</body>
+
+</html>
